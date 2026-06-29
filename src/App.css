@@ -1,0 +1,402 @@
+/* =========================
+   ROOT THEME
+========================= */
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #7c3aed;
+  --accent-2: #a78bfa;
+  --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #121a30;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #a78bfa;
+  --accent-2: #7c3aed;
+  --border: #1f2937;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 3rem 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-menu a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nav-menu a:hover {
+  color: var(--text);
+}
+
+.menu-btn,
+.theme-toggle {
+  margin-left: 0.8rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 16px;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+
+/* =========================
+   GRIDS (SAFE)
+========================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card,
+.skill,
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   SKILLS BAR
+========================= */
+.bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .bar {
+  background: rgba(255,255,255,0.1);
+}
+
+.bar .progress {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* =========================
+   LIST FIX
+========================= */
+.list {
+  padding-left: 1.2rem;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+
+/* =========================
+   CONTACT FORM FIX
+========================= */
+.contact-form {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+  color: var(--text);
+  font-weight: 700;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* =========================
+   TYPING
+========================= */
+.typing {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cursor {
+  animation: blink 0.8s infinite;
+}
+
+/* =========================
+   NAV MOBILE
+========================= */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .nav-menu.show {
+    display: block;
+  }
+
+  .nav-menu a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* =========================
+   TOUCH FIX
+========================= */
+button, .btn, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   PROJECT GRID FIX
+========================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+/* Card uniform height fix */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Image consistency */
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Content spacing */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+/* Buttons alignment */
+.project-content .links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* =========================
+   PROJECT LINKS FIX
+========================= */
+.links a {
+  display: inline-block;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card);
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Optional: differentiate Live button */
+.links a:first-child {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+
+.links a:first-child:hover {
+  filter: brightness(1.1);
+}
