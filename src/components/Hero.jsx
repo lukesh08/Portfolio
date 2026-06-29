@@ -70,10 +70,7 @@ function Hero() {
             </h2>
           )}
 
-          <p>
-            Frontend Developer • CS Undergrad • Building clean,
-            user-first web experiences.
-          </p>
+          
 
           <div className="cta">
             <a href="#projects" className="btn primary">
